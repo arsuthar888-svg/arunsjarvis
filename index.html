@@ -1,25 +1,163 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#050914"><title>ARUN JARVIS | AI Interface</title>
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mia AI Mega</title>
 <style>
-:root{--c:#52e8ff;--c2:#168bff;--bg:#040812;--panel:rgba(9,20,35,.82);--line:rgba(82,232,255,.24);--muted:#8ba8bc;--green:#8cffc7;--red:#ff647c}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 15%,#142c46 0,#081321 34%,#03060d 75%);color:#e8f8ff;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;min-height:100vh;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.17;background-image:linear-gradient(#55eaff12 1px,transparent 1px),linear-gradient(90deg,#55eaff12 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(#000,transparent)}header{position:sticky;top:0;z-index:10;background:#050a14dd;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:13px 16px;display:flex;justify-content:space-between;align-items:center}.logo{font-weight:900;letter-spacing:3px;color:var(--c);font-size:16px}.logo small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px;margin-top:3px}.statuspill{font-size:10px;letter-spacing:1px;color:var(--green);border:1px solid #8cffc733;padding:8px 10px;border-radius:99px}main{max-width:1100px;margin:auto;padding:16px}.layout{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:19px;box-shadow:0 14px 50px #0005;backdrop-filter:blur(10px)}.hero{min-height:420px;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:18px;position:relative;overflow:hidden}.eyebrow{color:var(--muted);font-size:10px;letter-spacing:3px;text-align:center}.orbwrap{height:225px;width:225px;position:relative;margin:10px}.orb{position:absolute;inset:42px;border-radius:50%;background:radial-gradient(circle at 32% 25%,#e7ffff 0,#8efaff 8%,#29b7f5 25%,#07518a 49%,#071a35 70%,#020812 100%);box-shadow:0 0 30px #00d5ff,0 0 80px #168bff55,inset 0 0 30px #baffff77;animation:breath 3s infinite}.orb:after{content:"";position:absolute;inset:17%;border:1px solid #d5ffff66;border-radius:50%}.ring{position:absolute;inset:15px;border:1px solid #55eaff70;border-radius:50%;transform:rotateX(65deg);animation:spin 10s linear infinite}.ring:nth-child(2){inset:5px;border-style:dashed;animation-duration:24s}.ring:nth-child(3){inset:25px;transform:rotateX(65deg) rotateZ(45deg);animation-duration:15s;animation-direction:reverse}@keyframes spin{to{transform:rotateX(65deg) rotateZ(360deg)}}@keyframes breath{50%{filter:brightness(1.25);box-shadow:0 0 45px #00d5ff,0 0 100px #168bff77,inset 0 0 40px #baffff99}}#status{font-size:13px;letter-spacing:2px;color:var(--c);margin:5px}.hint{font-size:11px;color:var(--muted);margin:5px;text-align:center}.mic{width:67px;height:67px;border-radius:50%;border:1px solid var(--c);background:linear-gradient(140deg,#143650,#071321);color:var(--c);font-size:25px;box-shadow:0 0 25px #00cfff44;cursor:pointer}.mic.active{color:var(--green);border-color:var(--green);box-shadow:0 0 28px #8cffc755;background:#103b30}.buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:15px}.btn{background:#102338;color:#e3f8ff;border:1px solid var(--line);border-radius:11px;padding:10px 12px;font-size:12px;cursor:pointer}.btn:hover{border-color:var(--c);box-shadow:0 0 13px #00cfff22}.btn.primary{background:#0b4563;border-color:#32cfff}.side{display:flex;flex-direction:column;gap:14px}.card{padding:16px}.card h3,.chathead h3{margin:0 0 12px;color:var(--c);font-size:12px;letter-spacing:2px}.row{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #173047;padding:9px 0;font-size:12px}.row:last-child{border:0}.row span:last-child{color:var(--muted);text-align:right}.quick{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.quick button{text-align:left;min-height:55px}.quick button b{display:block;color:var(--c);font-size:10px;margin-bottom:5px}.chat{padding:15px;margin-top:14px}.chathead{display:flex;align-items:center;justify-content:space-between}.messages{height:230px;overflow:auto;display:flex;flex-direction:column;gap:9px;padding:4px}.bubble{max-width:88%;white-space:pre-wrap;line-height:1.45;font-size:13px;padding:11px 13px;border-radius:14px;border:1px solid #1b4056;background:#0c1b2b}.bubble.user{align-self:flex-end;background:#0c3550;border-color:#24708c}.bubble.bot{align-self:flex-start}.entry{display:flex;gap:8px;margin-top:10px}.entry input,.settings input{background:#06121e;color:#fff;border:1px solid var(--line);border-radius:11px;padding:12px;outline:none}.entry input{min-width:0;flex:1;font-size:14px}.settings{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:11px}.settings input{flex:1;min-width:115px;padding:9px}.label{color:var(--muted);font-size:10px;letter-spacing:1px}.note{font-size:10px;color:var(--muted);line-height:1.55;margin-top:12px}.footer{text-align:center;color:#5f7e93;font-size:9px;letter-spacing:2px;padding:17px}.clock{font-size:24px;font-weight:700;color:#d9f9ff;text-align:center}.clockdate{font-size:11px;color:var(--muted);text-align:center;margin-top:3px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#102a3e;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:12px;z-index:30;display:none}@media(max-width:760px){.layout{grid-template-columns:1fr}.hero{min-height:355px}.orbwrap{width:195px;height:195px}.orb{inset:36px}main{padding:12px}.logo{font-size:14px}}
-</style></head><body>
-<header><div class="logo">ARUN JARVIS<small>PERSONAL ASSISTANT • MK II</small></div><div class="statuspill" id="online">● SYSTEM READY</div></header>
-<main><div class="layout"><section class="panel hero"><div class="eyebrow">VOICE INTERFACE / COMMAND CENTER</div><div class="orbwrap"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="orb"></div></div><div id="status">READY FOR COMMAND</div><div class="hint" id="hint">Tap mic to start voice input</div><button class="mic" id="mic" onclick="toggleListen()" aria-label="Toggle microphone">⌁</button><div class="buttons"><button class="btn" onclick="command('open instagram')">INSTAGRAM</button><button class="btn" onclick="command('open youtube')">YOUTUBE</button><button class="btn" onclick="command('open whatsapp')">WHATSAPP</button><button class="btn" onclick="command('time')">TIME</button></div></section>
-<div class="side"><section class="panel card"><h3>LIVE SYSTEM</h3><div class="clock" id="clock">--:--</div><div class="clockdate" id="clockdate">--</div><div class="row"><span>Assistant</span><span id="nameStatus">Arun Jarvis</span></div><div class="row"><span>Voice engine</span><span id="voiceStatus">Checking</span></div><div class="row"><span>Listening</span><span id="listenStatus">OFF</span></div><div class="row"><span>Platform</span><span>WEB PROTOTYPE</span></div></section><section class="panel card"><h3>QUICK COMMANDS</h3><div class="quick"><button class="btn" onclick="command('open instagram')"><b>APP LAUNCH</b>Open Instagram</button><button class="btn" onclick="command('open youtube')"><b>APP LAUNCH</b>Open YouTube</button><button class="btn" onclick="command('open whatsapp')"><b>APP LAUNCH</b>Open WhatsApp</button><button class="btn" onclick="command('search for Mahindra Scorpio')"><b>WEB SEARCH</b>Search the web</button><button class="btn" onclick="command('time')"><b>TIME</b>Current time</button><button class="btn" onclick="command('date')"><b>DATE</b>Today</button><button class="btn" onclick="command('calculator')"><b>UTILITY</b>Calculator</button><button class="btn" onclick="command('help')"><b>HELP</b>Command guide</button></div></section></div></div>
-<section class="panel chat"><div class="chathead"><h3>JARVIS CONSOLE</h3><button class="btn" onclick="clearChat()">CLEAR</button></div><div class="messages" id="messages"><div class="bubble bot">All systems ready. I am your Jarvis command interface. Tap the microphone or type a command.</div></div><div class="entry"><input id="input" placeholder="Type a command..." onkeydown="if(event.key==='Enter')send()"><button class="btn primary" onclick="send()">SEND</button></div><div class="settings"><span class="label">ASSISTANT NAME</span><input id="nameInput" value="Arun Jarvis" maxlength="32"><button class="btn" onclick="saveName()">SAVE</button><button class="btn" onclick="setWake()">WAKE LISTEN</button></div><div class="note">Wake phrase listening is browser-dependent and works only while this page remains open, foregrounded and actively listening. This web prototype cannot read Instagram/WhatsApp private chats, control other apps freely, or run reliably in the background. Such functions require a native Android app, permissions, and appropriate integrations. No AI API is connected in this demo.</div></section><div class="footer">ARUN JARVIS • MK II • PERSONAL WEB PROTOTYPE</div></main><div class="toast" id="toast"></div>
+*{box-sizing:border-box}
+body{margin:0;background:#100d18;color:#fff;font-family:Arial}
+.app{max-width:700px;height:100dvh;margin:auto;display:flex;flex-direction:column;background:#1a1422}
+header{padding:16px;background:#25192f;display:flex;align-items:center;gap:12px}
+.avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(45deg,#ff65b5,#9b64ff);display:grid;place-items:center;font-size:23px}
+header small{color:#c7a8d8}
+#chat{flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+.msg{padding:13px;border-radius:16px;max-width:85%;white-space:pre-wrap;line-height:1.5}
+.ai{align-self:flex-start;background:#35253f}
+.user{align-self:flex-end;background:#c04c98}
+img.generated{width:100%;border-radius:14px;margin-top:10px}
+.bottom{background:#25192f;padding:12px}
+.controls{display:flex;gap:8px;flex-wrap:wrap}
+input{flex:1;min-width:140px;background:#392943;color:white;border:0;border-radius:14px;padding:14px}
+button{border:0;padding:12px;border-radius:12px;background:#c04c98;color:white;font-weight:bold}
+button.secondary{background:#584269}
+.status{font-size:12px;color:#c4a9d4;margin:10px 2px 0}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+<div class="avatar">💗</div>
+<div>
+<strong>Mia AI Mega</strong><br>
+<small>AI Companion · Demo</small>
+</div>
+</header>
+
+<div id="chat">
+<div class="msg ai">Hii 💗 I'm Mia! Let's chat. You can ask me to imagine and illustrate a scene too.</div>
+</div>
+
+<div class="bottom">
+<div class="controls">
+<input id="msg" placeholder="Type a message..." autocomplete="off">
+<button onclick="send()">Send</button>
+<button class="secondary" onclick="makeScene()">🎨 Scene</button>
+<button class="secondary" onclick="voice()">🔊 Voice</button>
+</div>
+<div class="status" id="status">AI backend not connected</div>
+</div>
+</div>
+
 <script>
-let assistantName=localStorage.getItem('jarvisName')||'Arun Jarvis',recognition=null,active=false,wakeListening=false;const $=id=>document.getElementById(id);$('nameInput').value=assistantName;$('nameStatus').textContent=assistantName;
-function clockTick(){let d=new Date();$('clock').textContent=d.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'});$('clockdate').textContent=d.toLocaleDateString([], {weekday:'long',day:'numeric',month:'long',year:'numeric'});}clockTick();setInterval(clockTick,1000);
-const SR=window.SpeechRecognition||window.webkitSpeechRecognition;$('voiceStatus').textContent=SR?'Available':'Unsupported';
-function add(text,who='bot'){let e=document.createElement('div');e.className='bubble '+who;e.textContent=text;$('messages').appendChild(e);$('messages').scrollTop=$('messages').scrollHeight;}
-function say(t){if(!('speechSynthesis'in window))return;speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='en-IN';u.rate=1;speechSynthesis.speak(u)}
-function toast(t){let e=$('toast');e.textContent=t;e.style.display='block';setTimeout(()=>e.style.display='none',2300)}
-function saveName(){assistantName=$('nameInput').value.trim()||'Jarvis';localStorage.setItem('jarvisName',assistantName);$('nameStatus').textContent=assistantName;add('Assistant name saved: '+assistantName);toast('Name saved');}
-function clearChat(){$('messages').innerHTML='';add('Console cleared. Ready.');}
-function send(){let t=$('input').value.trim();if(!t)return;$('input').value='';add(t,'user');command(t);}
-function openApp(app){let urls={instagram:['https://www.instagram.com/','com.instagram.android'],youtube:['https://www.youtube.com/','com.google.android.youtube'],whatsapp:['https://wa.me/','com.whatsapp'],chrome:['https://www.google.com/','com.android.chrome'],maps:['https://maps.google.com/','com.google.android.apps.maps'],facebook:['https://www.facebook.com/','com.facebook.katana'],spotify:['https://open.spotify.com/','com.spotify.music']};let a=urls[app];if(!a){add('I do not have a launcher shortcut for '+app+'. I can search for it instead.');return;}let fallback=a[0];try{location.href='intent://'+fallback.replace(/^https?:\/\//,'')+'#Intent;scheme=https;package='+a[1]+';end';}catch(e){}setTimeout(()=>{window.open(fallback,'_blank');},650);}
-function command(raw){let t=raw.toLowerCase().trim(),ans='I am the Jarvis web prototype. Try “help” for commands.';if(t==='help'||t.includes('what can you do')){ans='Commands: open Instagram, YouTube, WhatsApp, Spotify, Maps or Facebook; search for [topic]; time; date; calculator; tell me a joke; save name. Voice wake phrase is browser-limited.';}else if(t.includes('open instagram')){ans='Attempting to open Instagram.';openApp('instagram');}else if(t.includes('open youtube')){ans='Attempting to open YouTube.';openApp('youtube');}else if(t.includes('open whatsapp')){ans='Attempting to open WhatsApp.';openApp('whatsapp');}else if(t.includes('open spotify')){ans='Attempting to open Spotify.';openApp('spotify');}else if(t.includes('open maps')){ans='Opening Maps.';openApp('maps');}else if(t.includes('open facebook')){ans='Opening Facebook.';openApp('facebook');}else if(t.startsWith('search for ')||t.startsWith('search ')){let q=t.replace(/^search for |^search /,'');ans='Searching the web for '+q;window.open('https://www.google.com/search?q='+encodeURIComponent(q),'_blank');}else if(t.includes('time')){ans='The time is '+new Date().toLocaleTimeString();}else if(t.includes('date')){ans='Today is '+new Date().toLocaleDateString();}else if(t.includes('calculator')){ans='Opening calculator if supported.';window.location.href='intent://calculator#Intent;scheme=android-app;end';}else if(t.includes('joke')){ans='Why did the computer go to the doctor? It had a virus. I am still learning more jokes!';}else if(t.includes('hello')||t.includes('hi')||t.includes('namaste')){ans='Hello! '+assistantName+' is online. What is your command?';}else if(t.includes('your name')||t.includes('who are you')){ans='I am '+assistantName+', your personal command interface.';}else if(t.includes('stop speaking')||t==='stop'){speechSynthesis.cancel();ans='Voice output stopped.';}add(ans);say(ans);}
-function toggleListen(){if(active){try{recognition.stop()}catch(e){}return;}startListen(false);}
-function setWake(){wakeListening=!wakeListening;toast(wakeListening?'Wake phrase mode requested':'Wake phrase mode off');if(wakeListening&&!active)startListen(true);}
-function startListen(wake){if(!SR){$('status').textContent='VOICE NOT SUPPORTED';$('hint').textContent='Try Chrome on Android';add('Speech recognition is not available in this browser.');return;}recognition=new SR();recognition.lang='en-IN';recognition.continuous=!!wake;recognition.interimResults=false;recognition.onstart=()=>{active=true;$('mic').classList.add('active');$('status').textContent=wake?'WAKE LISTENING':'LISTENING';$('hint').textContent=wake?'Say '+assistantName+' followed by a command':'Speak your command';$('listenStatus').textContent='ON';};recognition.onresult=e=>{for(let i=e.resultIndex;i<e.results.length;i++){if(!e.results[i].isFinal)continue;let heard=e.results[i][0].transcript.trim();if(wake){if(heard.toLowerCase().includes(assistantName.toLowerCase())){let cmd=heard.replace(new RegExp(assistantName,'ig'),'').trim();if(cmd){add(heard,'user');command(cmd);}else{add('Yes, I am listening.','bot');say('Yes, I am listening.');}}else hint.textContent='Waiting for wake phrase: '+assistantName;}else{add(heard,'user');command(heard);}}};recognition.onerror=e=>{$('hint').textContent='Voice error: '+e.error;};recognition.onend=()=>{active=false;$('mic').classList.remove('active');$('listenStatus').textContent='OFF';if(wakeListening){$('status').textContent='WAKE MODE RESTARTING';setTimeout(()=>{if(wakeListening)startListen(true)},800);}else{$('status').textContent='READY FOR COMMAND';$('hint').textContent='Tap mic to start voice input';}};try{recognition.start()}catch(e){add('Microphone start failed. Try again.');}}
-</script></body></html>
+const chat=document.getElementById('chat');
+const input=document.getElementById('msg');
+const statusBox=document.getElementById('status');
+
+let history=[];
+let lastReply="";
+
+function bubble(text,type){
+ const d=document.createElement('div');
+ d.className='msg '+type;
+ d.textContent=text;
+ chat.appendChild(d);
+ chat.scrollTop=chat.scrollHeight;
+ return d;
+}
+
+async function send(){
+ const t=input.value.trim();
+ if(!t)return;
+ input.value='';
+ bubble(t,'user');
+ history.push({role:'user',content:t});
+ statusBox.textContent='Thinking...';
+
+ try{
+  const r=await fetch('/api/chat',{
+   method:'POST',
+   headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({messages:history})
+  });
+  if(!r.ok)throw new Error('API error');
+  const data=await r.json();
+  lastReply=data.reply||'No response';
+  bubble(lastReply,'ai');
+  history.push({role:'assistant',content:lastReply});
+  statusBox.textContent='Connected';
+ }catch(e){
+  bubble('Backend connect nahi hai. /api/chat ko apne AI server se connect karo.','ai');
+  statusBox.textContent='Backend offline';
+ }
+}
+
+async function makeScene(){
+ statusBox.textContent='Scene imagine ho raha hai...';
+
+ const context=history.slice(-12);
+ if(context.length===0){
+  bubble('Pehle conversation karo, phir scene create karenge 💗','ai');
+  return;
+ }
+
+ try{
+  const r=await fetch('/api/image',{
+   method:'POST',
+   headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({
+    messages:context,
+    instruction:
+    'Create a context-aware, non-explicit illustration '+
+    'of the scene described in the conversation. '+
+    'Do not depict sexual content, nudity, or minors in romantic scenes.'
+   })
+  });
+
+  if(!r.ok)throw new Error('Image API error');
+  const data=await r.json();
+
+  if(data.imageUrl){
+   const b=bubble('🎨 Scene generated','ai');
+   const im=document.createElement('img');
+   im.src=data.imageUrl;
+   im.className='generated';
+   im.alt='Generated scene';
+   b.appendChild(im);
+  }else if(data.prompt){
+   const b=bubble('Image prompt: '+data.prompt,'ai');
+   const btn=document.createElement('button');
+   btn.textContent='Copy prompt';
+   btn.onclick=()=>navigator.clipboard.writeText(data.prompt);
+   b.appendChild(btn);
+  }
+  statusBox.textContent='Done';
+ }catch(e){
+  bubble('Image backend connect nahi hai. /api/image endpoint connect karo.','ai');
+  statusBox.textContent='Image backend offline';
+ }
+}
+
+function voice(){
+ if(!lastReply){
+  alert('Pehle AI reply aane do.');
+  return;
+ }
+ if(!speechSynthesis)return;
+ speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(lastReply);
+ u.lang='hi-IN';
+ u.rate=1;
+ const voices=speechSynthesis.getVoices();
+ const v=voices.find(x=>/female|zira|samantha/i.test(x.name));
+ if(v)u.voice=v;
+ speechSynthesis.speak(u);
+}
+
+input.addEventListener('keydown',e=>{
+ if(e.key==='Enter')send();
+});
+</script>
+</body>
+</html>
